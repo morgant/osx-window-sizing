@@ -2,7 +2,9 @@ OSX Window Sizing
 =================
 
 OSX Window Sizing is a set of apps that makes it dead-simple to change the size of 
-you windows. At present, it comes with two apps: center and maximize
+your windows.
+
+This Topfunky fork includes several extra scripts to resize specific apps to certain places on the screen. I have them bound to ctrl-shift-[1,2,3,4,5] for easy access. Use them as a starting point for your own window management.
 
 maximize
 --------
@@ -25,6 +27,10 @@ applescripts into .scpt files and copy them into your ~/Library/Scripts folder.
 
 Usage
 -----
+
+To compile and run all scripts to ~/Library/Scripts, run
+
+  rake install
 
 It is recommended that you bind the scripts to shortcut keys in the system. I personally
 use `ctrl-shift-M` for maximize and `ctrl-shift-C` for center.

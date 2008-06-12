@@ -1,4 +1,4 @@
--- Put frontmost window on left half
+-- Put frontmost window on left side
 
 tell application "System Events"
 

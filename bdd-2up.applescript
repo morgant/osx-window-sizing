@@ -5,11 +5,6 @@ tell application "System Events"
   -- TODO hide all other apps
 	
   tell process "Terminal"
-    -- try
-    --   set {{w, h}} to size of drawer of window 1
-    -- on error
-    --   set {w, h} to {0, 0}
-    -- end try
     set position of window 1 to {800, 50}
     set size of window 1 to {700, 800}
   end tell
