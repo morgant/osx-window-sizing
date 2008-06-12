@@ -1,9 +1,10 @@
 desc "Compile scripts to .scpt files"
 task :compile do
-  puts "Compiling center.applescript..."
-  system "osacompile -o center.scpt center.applescript"
-  puts "Compiling center.applescript..."  
-  system "osacompile -o maximize.scpt maximize.applescript"
+  Dir["*.applescript"].each do |script|
+    script_name = script.gsub(/\.applescript/, '')
+    puts "Compiling #{script_name}.applescript..."
+    system "osacompile -o #{script_name}.scpt #{script_name}.applescript"
+  end
   puts "Done"
   puts
 end
@@ -11,6 +12,7 @@ end
 desc "Install scripts to your scripts folder"
 task :install => :compile do
   puts "Copying scripts to your scripts folder"
+  system "mkdir -p ~/Library/Scripts"
   system "cp *.scpt ~/Library/Scripts"
   puts "Done"
   puts

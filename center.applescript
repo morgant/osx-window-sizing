@@ -4,7 +4,11 @@ delay 0.1
 
 set AppleScript's text item delimiters to "x"
 
-set res to text returned of (display dialog "Enter the width x height:" default answer ((windowWidth & windowHeight) as text))
+-- Uncomment to see dialog
+-- set res to text returned of (display dialog "Enter the width x height:" default answer ((windowWidth & windowHeight) as text))
+
+-- HACK Manually set target window size
+set res to "800x600"
 
 if res is "" then
   display dialog "You need to enter a correct response"
