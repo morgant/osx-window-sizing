@@ -1,4 +1,4 @@
-set windowWidth to 800
+set windowWidth to 1000
 set windowHeight to 600
 delay 0.1
 
@@ -51,4 +51,8 @@ tell application "System Events"
     set position of window 1 to {((screen_width - windowWidth - w) / 2), ((screen_height - windowHeight) / 2.0) - desktopTop}
     set size of window 1 to {windowWidth, windowHeight}
   end tell
+end tell
+
+tell application "Safari"
+  quit
 end tell
