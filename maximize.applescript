@@ -1,4 +1,4 @@
-tell application "Camino"
+tell application "Safari"
   set screen_width to (do JavaScript "screen.availWidth" in document 1)
   set screen_height to (do JavaScript "screen.availHeight" in document 1)
 end tell
