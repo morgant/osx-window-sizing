@@ -1,3 +1,23 @@
+set windowWidth to 800
+set windowHeight to 600
+delay 0.1
+
+set AppleScript's text item delimiters to "x"
+
+-- Uncomment to see dialog
+-- set res to text returned of (display dialog "Enter the width x height:" default answer ((windowWidth & windowHeight) as text))
+
+-- HACK Manually set target window size
+set res to "800x600"
+
+if res is "" then
+  display dialog "You need to enter a correct response"
+  return
+end if
+set {windowWidth, windowHeight} to text items of res
+
+set AppleScript's text item delimiters to ""
+
 tell application "Camino"
   set screen_width to (do JavaScript "screen.availWidth" in document 1)
   set screen_height to (do JavaScript "screen.availHeight" in document 1)
@@ -28,7 +48,7 @@ tell application "System Events"
     on error
       set {w, h} to {0, 0}
     end try
-    set position of window 1 to {0, 0}
-    set size of window 1 to {screen_width - w, screen_height}
+    set position of window 1 to {((screen_width - windowWidth - w) / 2), ((screen_height - windowHeight) / 2.0) - desktopTop}
+    set size of window 1 to {windowWidth, windowHeight}
   end tell
 end tell

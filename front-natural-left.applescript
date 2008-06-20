@@ -1,6 +1,6 @@
 -- Put frontmost window on left side
 
-tell application "Safari"
+tell application "Camino"
   set screen_width to (do JavaScript "screen.availWidth" in document 1)
   set screen_height to (do JavaScript "screen.availHeight" in document 1)
 end tell
@@ -14,8 +14,4 @@ tell application "System Events"
     set position of window 1 to {0, 20}
   end tell
 
-end tell
-
-tell application "Safari"
-  quit
 end tell
