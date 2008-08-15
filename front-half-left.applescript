@@ -1,12 +1,14 @@
 -- Put frontmost window on left half
 
-tell application "Safari"
-  set screen_width to (do JavaScript "screen.availWidth" in document 1)
-  set screen_height to (do JavaScript "screen.availHeight" in document 1)
+-- Works with most setups
+tell application "Finder"
+  set {screen_top, screen_left, screen_width, screen_height} to bounds of window of desktop
 end tell
 
--- tell application "Finder"
---   set {desktopTop, desktopLeft, desktopRight, desktopBottom} to bounds of desktop
+-- NOTE This may work better with some multi-monitor setups
+-- tell application "Safari"
+--   set screen_width to (do JavaScript "screen.availWidth" in document 1)
+--   set screen_height to (do JavaScript "screen.availHeight" in document 1)
 -- end tell
 
 tell application "System Events"
