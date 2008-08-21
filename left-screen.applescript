@@ -1,4 +1,4 @@
--- Put frontmost window on right half
+-- DESCRIPTION: Put frontmost window on left screen in my dual monitor setup.
 
 -- Works with most setups
 tell application "Finder"
@@ -12,12 +12,11 @@ end tell
 -- end tell
 
 tell application "System Events"
+  set myFrontMost to name of first item of (processes whose frontmost is true)
+end tell
 
-	set myFrontMost to name of first item of (processes whose frontmost is true)
-	
+tell application "System Events"
   tell process myFrontMost
-    set size of window 1 to {(screen_width/2), screen_height}
-    set position of window 1 to {(screen_width/2), 20}
+    set position of window 1 to {(screen_left + 200), (screen_top + 500)}
   end tell
-
 end tell

@@ -1,6 +1,6 @@
 -- Works with most setups
 tell application "Finder"
-  set {screen_top, screen_left, screen_width, screen_height} to bounds of window of desktop
+  set {screen_left, screen_top, screen_width, screen_height} to bounds of window of desktop
 end tell
 
 -- NOTE This may work better with some multi-monitor setups
@@ -11,10 +11,6 @@ end tell
 
 tell application "System Events"
   set myFrontMost to name of first item of (processes whose frontmost is true)
-end tell
-
-tell application "Finder"
-  set {desktopTop, desktopLeft, desktopRight, desktopBottom} to bounds of desktop
 end tell
 
 try
