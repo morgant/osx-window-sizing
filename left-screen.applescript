@@ -17,6 +17,6 @@ end tell
 
 tell application "System Events"
   tell process myFrontMost
-    set position of window 1 to {(screen_left + 50), (screen_top + 400)}
+    set position of window 1 to {(screen_left + 250), (screen_top)}
   end tell
 end tell
