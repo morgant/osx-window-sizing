@@ -1,3 +1,5 @@
+-- AUTHOR: Geoffrey Grosenbach http://peepcode.com
+
 -- Put frontmost window on left side
 
 -- Works with most setups
@@ -13,7 +15,7 @@ end tell
 
 tell application "System Events"
 
-	set myFrontMost to name of first item of (processes whose frontmost is true)
+  set myFrontMost to name of first item of (processes whose frontmost is true)
 	
   tell process myFrontMost
     set size of window 1 to {1040, screen_height}

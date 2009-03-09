@@ -1,3 +1,7 @@
+-- Maximize frontmost window.
+--
+-- AUTHOR: Geoffrey Grosenbach http://peepcode.com
+
 -- Works with most setups
 tell application "Finder"
   set {screen_left, screen_top, screen_width, screen_height} to bounds of window of desktop
