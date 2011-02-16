@@ -58,7 +58,14 @@ tell application "System Events"
     on error
       set {w, h} to {0, 0}
     end try
+    -- Okay, this is a little funky to handle all the cases:
+    -- 1) Move the window first ('cause you can't resize beyond the bounds of the screen if it's near an edge)
+    -- 2) Resize the window
+    -- 3) Get the size of the window (in case it's non-resizeable)
+    -- 4) Then move the window again (based on the final size)
     set position of window 1 to {((screen_width - windowWidth - w) / 2), ((screen_height - windowHeight) / 2.0) - desktopTop}
-    set size of window 1 to {windowWidth, windowHeight}
+    set size of window 1 to {windowWidth - w, windowHeight}
+    set {window_width, window_height} to size of window 1
+    set position of window 1 to {((screen_width - window_width - w) / 2), ((screen_height - window_height) / 2.0) - desktopTop}
   end tell
 end tell
