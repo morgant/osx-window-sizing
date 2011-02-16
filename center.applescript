@@ -1,8 +1,10 @@
 -- AUTHOR: Yehuda Katz
 -- MODIFIED: Geoffrey Grosenbach http://peepcode.com
+-- MODIFIED: Morgan Aldridge http://www.makkintosshu.com/
 
-set windowWidth to 1000
-set windowHeight to 600
+set windowWidth to 1280
+set windowHeight to 780
+set gutter to 5
 delay 0.1
 
 set AppleScript's text item delimiters to "x"
@@ -10,7 +12,7 @@ set AppleScript's text item delimiters to "x"
 -- Uncomment to see dialog
 -- set res to text returned of (display dialog "Enter the width x height:" default answer ((windowWidth & windowHeight) as text))
 -- HACK Manually set target window size
-set res to "" & windowWidth & "x" & windowHeight
+set res to "" & ( windowWidth - ( gutter * 2 ) ) & "x" & ( windowHeight - ( gutter * 2 ) )
 
 if res is "" then
   display dialog "You need to enter a correct response"
